@@ -8,6 +8,5 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.integer :likes_counter, default: 0
       t.timestamps
     end
-    add_index :posts, :author_id
   end
 end
