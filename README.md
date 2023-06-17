@@ -168,6 +168,6 @@ I would like to thank Microverse for helping us in the journey to become a Fulls
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right"><a href="#readme-top">👆</a></p>
