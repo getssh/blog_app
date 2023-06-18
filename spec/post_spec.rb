@@ -37,4 +37,27 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "update_likes_counter" do
+    let(:post) { create(:post) }
+
+    it "updates the likes_counter attribute" do
+      create_list(:like, 4, post: post)
+
+      post.update_likes_counter
+
+      expect(post.likes_counter).to eq(4)
+    end
+  end
+
+  describe "update_posts_counter" do
+    let(:user) { create(:user) }
+
+    it "updates the post_counter attribute of the associated user" do
+      create_list(:post, 6, author: user)
+
+      user.posts.first.update_posts_counter
+
+      expect(user.post_counter).to eq(6)
+    end
+  end
 end
