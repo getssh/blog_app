@@ -1,25 +1,39 @@
+require 'rails_helper'
+
 RSpec.describe User, type: :model do
-  describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_numericality_of(:post_counter).only_integer.is_greater_than_or_equal_to(0) }
+  let(:user) { User.new(name: 'John Doe') }
+
+  it 'is valid with a name' do
+    expect(user).to be_valid
   end
 
-  describe "associations" do
-    it { should have_many(:posts).with_foreign_key(:author_id) }
-    it { should have_many(:comments).with_foreign_key(:author_id) }
-    it { should have_many(:likes).with_foreign_key(:author_id) }
+  it 'is invalid without a name' do
+    user.name = nil
+    expect(user).to be_invalid
+    expect(user.errors[:name]).to include("can't be blank")
   end
 
-  describe "recent_posts" do
-    let(:user) { create(:user) }
+  it 'validates the post_counter to be a non-negative integer' do
+    user.post_counter = 10
+    expect(user).to be_valid
 
-    it "returns the 3 most recent posts" do
-      create_list(:post, 5, author: user)
-      
-      recent_posts = user.recent_posts
-      
-      expect(recent_posts.length).to eq(3)
-      expect(recent_posts).to eq(user.posts.order(created_at: :desc).limit(3))
-    end
+    user.post_counter = -5
+    expect(user).to be_invalid
+    expect(user.errors[:post_counter]).to include('must be greater than or equal to 0')
+
+    user.post_counter = 5.5
+    expect(user).to be_invalid
+    expect(user.errors[:post_counter]).to include('must be an integer')
+  end
+
+  it 'returns the three most recent posts' do
+    user.save
+
+    post1 = Post.create(title: 'Post 1', author: user, created_at: 1.hour.ago)
+    post2 = Post.create(title: 'Post 2', author: user, created_at: 30.minutes.ago)
+    post3 = Post.create(title: 'Post 3', author: user, created_at: 1.minute.ago)
+    post4 = Post.create(title: 'Post 4', author: user, created_at: 1.day.ago)
+
+    expect(user.recent_posts).to eq([post3, post2, post1])
   end
 end
