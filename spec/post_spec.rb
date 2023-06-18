@@ -25,4 +25,16 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "update_comments_counter" do
+    let(:post) { create(:post) }
+
+    it "updates the comments_counter attribute" do
+      create_list(:comment, 3, post: post)
+
+      post.update_comments_counter
+
+      expect(post.comments_counter).to eq(3)
+    end
+  end
+
 end
