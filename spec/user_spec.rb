@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
     post1 = Post.create(title: 'Post 1', author: user, created_at: 1.hour.ago)
     post2 = Post.create(title: 'Post 2', author: user, created_at: 30.minutes.ago)
     post3 = Post.create(title: 'Post 3', author: user, created_at: 1.minute.ago)
-    post4 = Post.create(title: 'Post 4', author: user, created_at: 1.day.ago)
+    Post.create(title: 'Post 4', author: user, created_at: 1.day.ago)
 
     expect(user.recent_posts).to eq([post3, post2, post1])
   end

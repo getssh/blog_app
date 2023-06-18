@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'belongs to an author' do
-    expect(post).to belong_to(:author).class_name("User")
+    expect(post).to belong_to(:author).class_name('User')
   end
 
   it 'has many likes' do
