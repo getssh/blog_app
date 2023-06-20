@@ -13,13 +13,13 @@ RSpec.describe Like, type: :model do
     it 'is invalid without an author' do
       like = Like.new(post: post)
       expect(like).not_to be_valid
-      expect(like.errors[:author]).to include("must exist")
+      expect(like.errors[:author]).to include('must exist')
     end
 
     it 'is invalid without a post' do
       like = Like.new(author: user)
       expect(like).not_to be_valid
-      expect(like.errors[:post]).to include("must exist")
+      expect(like.errors[:post]).to include('must exist')
     end
   end
 
