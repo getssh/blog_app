@@ -11,7 +11,7 @@
 </div>
 
 <h3>User's Posts</h3>
-<% @user.posts.each do |post| %>
+<% @user.recent_posts.each do |post| %>
   <div>
     <h4>Post Number: <%= post.id %></h4>
     <p><%= post.text %></p>
@@ -19,4 +19,5 @@
   </div>
 <% end %>
 
+<%= link_to "Home", users_path %>
 <%= link_to 'See all posts', user_posts_path(@user) %>
