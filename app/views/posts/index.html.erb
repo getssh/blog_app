@@ -13,7 +13,7 @@
     <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     <h4>Top 5 Comments:</h4>
     <ul>
-      <% post.comments.order(created_at: :desc).limit(5).each do |comment| %>
+      <% post.recent_comments.each do |comment| %>
         <li><%= "#{comment.author.name}: #{comment.text}" %></li>
       <% end %>
     </ul>
