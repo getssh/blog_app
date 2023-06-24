@@ -1,25 +1,29 @@
-<h1>User's Posts</h1>
-
-<div>
-  <h2><%= @user.name %></h2>
-  <p>Number of Posts: <%= @user.posts.count %></p>
+<div class="users">
+  <div class="user-image">Image</div>
+  <div class="user-info">
+    <h2><%= @user.name %></h2>
+    <p class="post-num">Number of Posts: <%= @user.posts.count %></p>
+  </div>
 </div>
 
-<% @posts.each do |post| %>
-  <div>
-    <h3>Post Number: <%= post.id %></h3>
-    <p><%= link_to post.title, user_post_path(@user, post) %></p>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-    <h4>Top 5 Comments:</h4>
-    <ul>
-      <% post.recent_comments.each do |comment| %>
-        <li><%= "#{comment.author.name}: #{comment.text}" %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="user-bio">
+  <% @posts.each do |post| %>
+    <div>
+      <h3>Post Number: <%= post.id %></h3>
+      <p><%= link_to post.title, user_post_path(@user, post) %></p>
+      <p><%= post.text %></p>
+      <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+      <ul class="comments">
+        <% post.recent_comments.each do |comment| %>
+          <li><%= "#{comment.author.name}: #{comment.text}" %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to "Home", users_path %>
-<%= link_to 'Back', user_path(@user) %>
-<%= link_to 'See all posts', user_posts_path(@user) %>
+<div class="bottom-nav">
+  <%= link_to "Home", users_path %>
+  <%= link_to 'Back', user_path(@user) %>
+  <%= link_to 'See all posts', user_posts_path(@user) %>
+</div>
