@@ -1,23 +1,25 @@
-<h1>User Profile</h1>
-
-<div>
-  <h2><%= @user.name %></h2>
-  <p>Number of Posts: <%= @user.posts.count %></p>
+<div class="users">
+  <div class="user-image">Image</div>
+  <div class="user-info">  
+    <h1><%= @user.name %></h1>
+    <p class="post-num">Number of Posts: <%= @user.posts.count %></p>
+  </div>
 </div>
 
-<div>
+<div class="user-bio">
   <h3>Bio</h3>
   <p><%= @user.bio %></p>
 </div>
 
-<h3>User's Posts</h3>
-<% @user.recent_posts.each do |post| %>
-  <div>
-    <h4>Post Number: <%= post.id %></h4>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-  </div>
-<% end %>
+<div class="user-bio">
+  <% @user.recent_posts.each do |post| %>
+    <div>
+      <h4>Post Number: <%= post.id %></h4>
+      <p><%= post.text %></p>
+      <p class="to-left">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to "Home", users_path %>
 <%= link_to 'See all posts', user_posts_path(@user) %>
