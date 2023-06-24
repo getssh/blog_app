@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def index
-    render plain: 'Here is a list of users'
+    # Render the index template
   end
 
   def show
-    render plain: "Here is the profile for user ##{params[:id]}"
+    # Render the show template
   end
 end
