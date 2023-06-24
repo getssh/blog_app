@@ -18,3 +18,19 @@
 .post-num {
   align-self: flex-end;
 }
+
+.user-bio {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 1rem;
+  text-align: left;
+  border: 1px solid #000;
+  margin-top: 2rem;
+}
+
+.to-left {
+  text-align: right;
+  padding-right: 1rem;
+}
