@@ -47,3 +47,13 @@
   justify-content: center;
   padding: 2rem 0;
 }
+
+.stat-count {
+  text-align: right;
+  margin-top: -2.5rem;
+  padding-right: 1rem;
+}
+
+.comt ul {
+  list-style-type: none;
+}
