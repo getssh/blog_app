@@ -15,3 +15,6 @@
     <li><%= "#{comment.author.name}: #{comment.text}" %></li>
   <% end %>
 </ul>
+
+<%= link_to "Home", users_path %>
+<%= link_to 'Back', user_path(@user) %>
