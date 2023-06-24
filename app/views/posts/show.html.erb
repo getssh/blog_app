@@ -1,1 +1,17 @@
 <p>Here is post #<%= params[:id] %> for user #<%= params[:user_id] %></p>
+
+<h1>Post Details</h1>
+
+<div>
+  <h2>Post #<%= @post.id %> by <%= @user.name %></h2>
+  <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+</div>
+
+<p><%= @post.text %></p>
+
+<h3>Comments:</h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><%= "#{comment.author.name}: #{comment.text}" %></li>
+  <% end %>
+</ul>
