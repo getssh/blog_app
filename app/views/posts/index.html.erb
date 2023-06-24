@@ -1,1 +1,20 @@
-<p>Here is a list of posts for user #<%= params[:user_id] %></p>
+<h1>User's Posts</h1>
+
+<div>
+  <h2><%= @user.name %></h2>
+  <p>Number of Posts: <%= @user.posts.count %></p>
+</div>
+
+<% @posts.each do |post| %>
+  <div>
+    <h3>Post Number: <%= post.id %></h3>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    <h4>Top 5 Comments:</h4>
+    <ul>
+      <% post.comments.order(created_at: :desc).limit(5).each do |comment| %>
+        <li><%= "#{comment.author.name}: #{comment.text}" %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
