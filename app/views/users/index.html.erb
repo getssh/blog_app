@@ -1,16 +1,11 @@
-<h1>All Users</h1>
-
-<table>
-  <tr>
-    <th>Photo</th>
-    <th>User Name</th>
-    <th>Number of Posts</th>
-  </tr>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= image_tag user.photo %></td>
-      <td><%= link_to user.name, user_path(user) %></td>
-      <td><%= user.posts.count %></td>
-    </tr>
-  <% end %>
-</table>
+<% @users.each do |user| %>
+  <div class="users">
+    <div class="user-image">Image</div>
+    <div class="user-info">
+      <div>
+        <h2><%= link_to user.name, user_path(user) %></h2>
+      </div>
+      <div class="post-num"><p>Number of posts: <%= user.posts.count %></p></div>
+    </div>
+  </div>
+<% end %>
