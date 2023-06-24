@@ -8,6 +8,7 @@
 <% @posts.each do |post| %>
   <div>
     <h3>Post Number: <%= post.id %></h3>
+    <p><%= link_to post.title, user_post_path(@user, post) %></p>
     <p><%= post.text %></p>
     <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     <h4>Top 5 Comments:</h4>
