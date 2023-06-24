@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   def index
-    # Render the index template
+    @users = User.all
   end
 
-  def show
-    # Render the show template
-  end
 end
