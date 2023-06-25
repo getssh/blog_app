@@ -12,6 +12,18 @@
   </ul>
 </div>
 
+<div class="reaction">
+  <%= button_to "Like", like_post_path(@post), method: :post %>
+
+  <div>
+    <h3>Add a Comment</h3>
+    <%= form_with(model: [@post, @post.comments.build], url: user_post_comments_path(@user, @post)) do |form| %>
+      <%= form.text_area :text %>
+      <br>
+      <%= form.submit "Add Comment" %>
+    <% end %>
+  </div>
+</div>
 <div class="bottom-nav">
   <%= link_to "Home", users_path %>
   <%= link_to 'Back', user_path(@user) %>

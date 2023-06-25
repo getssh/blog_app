@@ -57,3 +57,11 @@
 .comt ul {
   list-style-type: none;
 }
+
+.reaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 1rem;
+}
