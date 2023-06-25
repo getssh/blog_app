@@ -1,1 +1,27 @@
-<p>Here is the profile for user #<%= params[:id] %></p>
+<div class="users">
+  <div class="user-image"><%= image_tag @user.photo %></div>
+  <div class="user-info">  
+    <h1><%= @user.name %></h1>
+    <p class="post-num">Number of Posts: <%= @user.posts.count %></p>
+  </div>
+</div>
+
+<div class="user-bio">
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</div>
+
+<div class="user-bio">
+  <% @user.recent_posts.each do |post| %>
+    <div>
+      <h4>Post Number: <%= link_to post.title, user_post_path(@user, post) %> <%= post.id %></h4>
+      <p><%= post.text %></p>
+      <p class="to-left">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    </div>
+  <% end %>
+</div>
+
+<div class="bottom-nav">
+  <%= link_to "Home", users_path %>
+  <%= link_to 'See all posts', user_posts_path(@user) %>
+</div>

@@ -1,0 +1,59 @@
+.users {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+}
+
+.user-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.user-image {
+  padding: 2rem;
+  max-width: 100px;
+}
+
+.post-num {
+  align-self: flex-end;
+}
+
+.user-bio {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 1rem;
+  text-align: left;
+  border: 1px solid #000;
+  margin-top: 2rem;
+}
+
+.to-left {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.comments {
+  border: 1px solid #000;
+  padding: 2rem 0.5rem;
+  list-style-type: none;
+}
+
+.bottom-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.stat-count {
+  text-align: right;
+  margin-top: -2.5rem;
+  padding-right: 1rem;
+}
+
+.comt ul {
+  list-style-type: none;
+}
