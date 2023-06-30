@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
   <div class="users">
-    <div class="user-image">UserPHoto</div>
+    <div class="user-image"><%= image_tag user.photo %></div>
     <div class="user-info">
       <div>
         <h2><%= link_to user.name, user_path(user) %></h2>
