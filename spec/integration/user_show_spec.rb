@@ -34,5 +34,22 @@ RSpec.describe 'Posts', type: :feature do
     it 'renders the number of posts the user has written' do
       expect(page).to have_content(user.post_counter)
     end
+    
+    it "renders the user bio" do
+      expect(page).to have_content(user.bio)
+    end
+
+    it 'renders latest 3 posts of the user' do
+      expect(page).to have_content('Post Number')
+    end
+
+    it 'renders a button to redirect to the posts page' do
+      expect(page).to have_link('See all posts', href: user_posts_path(user))
+    end
+
+    it "redirects to the user's posts index page" do
+      click_link 'See all posts'
+      expect(page).to have_current_path(user_posts_path(user))
+    end
   end
 end
