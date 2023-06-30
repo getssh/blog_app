@@ -14,6 +14,8 @@ RSpec.feature 'Posts Index', type: :feature do
 
     expect(page).to have_content(post1.title)
     expect(page).to have_content(post2.title)
+    expect(page).to have_content(post1.text)
+    expect(page).to have_content(post2.text)
 
     click_link post1.title
     expect(current_path).to eq(user_post_path(user, post1))
