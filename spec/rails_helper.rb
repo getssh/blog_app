@@ -6,6 +6,7 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
 
+require 'capybara/rspec'
 require 'spec_helper'
 
 ENV['RAILS_ENV'] ||= 'test'
