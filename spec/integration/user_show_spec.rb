@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :feature do
   describe 'show page' do
     let(:user) do
-      User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Bio placeholder', post_counter: 0)
+      User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Bio placeholder',
+                  post_counter: 0)
     end
 
     let!(:post1) do
@@ -23,19 +24,19 @@ RSpec.describe 'Posts', type: :feature do
 
     before { visit user_path(user) }
 
-    it "renders the user picture" do
+    it 'renders the user picture' do
       expect(page).to have_css("img[src='#{user.photo}']")
     end
 
-    it "renders the user username" do
+    it 'renders the user username' do
       expect(page).to have_content(user.name)
     end
 
     it 'renders the number of posts the user has written' do
       expect(page).to have_content(user.post_counter)
     end
-    
-    it "renders the user bio" do
+
+    it 'renders the user bio' do
       expect(page).to have_content(user.bio)
     end
 
