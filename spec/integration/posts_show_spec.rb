@@ -17,7 +17,9 @@ RSpec.feature 'Post Show', type: :feature do
     expect(page).to have_content('Add a Comment')
 
     expect(page).to have_button('Like')
-
+    click_button 'Like'
+    post.reload
+    expect(post.likes_counter).to eq(1)
 
 
 
