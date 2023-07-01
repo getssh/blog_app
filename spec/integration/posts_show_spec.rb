@@ -16,5 +16,10 @@ RSpec.feature 'Post Show', type: :feature do
     expect(page).to have_content(comment2.text)
     expect(page).to have_content('Add a Comment')
 
+    expect(page).to have_button('Like')
+
+
+
+
   end
 end
