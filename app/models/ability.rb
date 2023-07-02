@@ -14,6 +14,5 @@ class Ability
       can :destroy, Post, author_id: user.id
       can :destroy, Comment, user_id: user.id
     end
-
   end
 end
