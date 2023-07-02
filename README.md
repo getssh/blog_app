@@ -25,7 +25,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-**Blog App** blog app is an interactive blog application, created with ruby on rails. users can:
+**Blog App** blog app is an interactive blog application, created with ruby on rails. users can: sign up, sign in to the application
 
 - Read blog posts
 - Add Likes
