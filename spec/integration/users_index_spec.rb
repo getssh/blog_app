@@ -9,5 +9,9 @@ https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Bio for John Doe')
     expect(page).to have_content(user2.name)
     expect(page).to have_selector("img[src$='#{user1.photo}']")
     expect(page).to have_selector("img[src$='#{user2.photo}']")
+    expect(page).to have_content("Number of posts: #{user1.posts.count}")
+    expect(page).to have_content("Number of posts: #{user2.posts.count}")
+    click_link user1.name
+    expect(current_path).to eq(user_path(user1))
   end
 end
