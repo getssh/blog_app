@@ -25,7 +25,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-**Blog App** blog app is an interactive blog application, created with ruby on rails. users can:
+**Blog App** blog app is an interactive blog application, created with ruby on rails. users can: sign up, sign in to the application
 
 - Read blog posts
 - Add Likes
@@ -125,6 +125,13 @@ ruby main.rb
 - GitHub: [@getssh](https://github.com/getssh)
 - Twitter: [@GetayawkalT](https://twitter.com/GetayawkalT)
 - LinkedIn: [@getayawkal-tamrat](https://www.linkedin.com/in/getayawkal-tamrat/)
+
+👨‍💻 **Muhammed Berisso**
+
+- GitHub: [muhammedb8826](https://github.com/muhammedb8826)
+- Twitter: [@muhammedb8826](https://twitter.com/muhammedb8826)
+- LinkedIn: [@muhammedb8826](https://www.linkedin.com/in/muhammedb8826/)
+
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
