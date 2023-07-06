@@ -14,6 +14,10 @@ RSpec.feature 'Posts Index', type: :feature do
 
     expect(page).to have_content(post1.title)
     expect(page).to have_content(post2.title)
+    expect(page).to have_content(post1.text)
+    expect(page).to have_content(post2.text)
+    expect(page).to have_content("Comments: #{post1.comments_counter}, Likes: #{post1.likes_counter}")
+    expect(page).to have_content("Comments: #{post2.comments_counter}, Likes: #{post2.likes_counter}")
 
     click_link post1.title
     expect(current_path).to eq(user_post_path(user, post1))
