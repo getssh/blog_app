@@ -28,8 +28,9 @@ class PostsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+    @post.comments.destroy_all
     @post.destroy
-    @user.posts_counter -= 1
+    @user.post_counter -= 1
     @user.save
     redirect_to user_posts_path(@user)
   end
