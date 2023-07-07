@@ -65,3 +65,38 @@
   gap: 5rem;
   padding-top: 1rem;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.3rem;
+  margin: 3rem 0 0 0;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.field {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  width: 200%;
+}
+
+.actions > * {
+  text-align: center;
+  width: 200%;
+  min-height: 2rem;
+}
+
+.links {
+  width: 200%;
+  text-align: center;
+  margin-left: 12rem;
+  padding-top: 1rem;
+}
