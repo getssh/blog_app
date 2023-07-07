@@ -100,3 +100,12 @@
   margin-left: 12rem;
   padding-top: 1rem;
 }
+
+.post-form {
+  display: flex;
+  justify-content: center;
+}
+
+.post-form .form-group > * {
+  width: 150%;
+}
