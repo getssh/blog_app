@@ -108,9 +108,20 @@ bundle install
 
 To start you can open your terminal and in the folder write
 ```bash
-ruby main.rb
+rails server
 ```
+to drop the existing DB run
+run 
+```bash
+rails db:drop
+```
+Run 
+```
+rails db:create
+```
+to create a new DB.
 
+rails db:migrate to migrate generated db
 
 
 
